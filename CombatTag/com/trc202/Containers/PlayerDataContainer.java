@@ -41,6 +41,8 @@ public class PlayerDataContainer{
 	
 	public void setPvPTimeout(int seconds){
 		pvpTimeOut = System.currentTimeMillis() + (seconds * 1000);
+		Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "permissions player addgroup "+ playerName +" pvp");
+		
 	}
 	public boolean hasPVPtagExpired(){
 		return (pvpTimeOut <= System.currentTimeMillis());
